@@ -12,20 +12,25 @@ class App extends Component {
   constructor(){
     super();
 this.makeRequest = this.makeRequest.bind(this)
-
+// this.points=this.props.points.bind(this)
   }
   makeRequest(arg) {
     const xhr = new XMLHttpRequest();
-    const url = arg
-    xhr.open('GET', url)
+    const url = 'http://10.8.80.153:8000/displayparams'
+    let formdata = new FormData()
+    formdata.append('watershed', arg)
+    xhr.open('POST', url)
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
+        // console.log(xhr.response);
+
         if (xhr.status === 200) {
+        // xhr.response=this.points
           console.log(xhr.response);
         }
       }
     }
-    xhr.send()
+    xhr.send(formdata)
   }
 
 

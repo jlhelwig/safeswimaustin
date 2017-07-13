@@ -9,13 +9,9 @@ class Austinmap extends React.Component {
     super();
 
   }
-    
 
-    state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13,
-    }
+
+    
 
 
   render() {
