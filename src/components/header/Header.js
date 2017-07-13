@@ -5,6 +5,7 @@ import './Header.css';
 class Header extends Component {
   constructor(props) {
     super()
+
   }
 
   render() {
@@ -12,7 +13,8 @@ class Header extends Component {
       <div className='Header'>
 
         <section>
-          <h1>Recent E. Coli Levels In Austin's Springs Streams and Lakes</h1>
+          <h1>Recent E. Coli Levels In Austin's Springs Streams and Lakes{this.changeDate}</h1>
+
         </section>
 
       </div>

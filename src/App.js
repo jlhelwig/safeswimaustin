@@ -10,29 +10,32 @@ import Austinmap from './components/map/Austinmap';
 // import Layout from './pages/Layout.js';
 class App extends Component {
   constructor(){
-    var date = new Date()
-
     super();
-    this.changeDate = this.changeDate.bind(this)
-    this.state = {
-      date: date.toLocaleDateString()
+this.makeRequest = this.makeRequest.bind(this)
+
+  }
+  makeRequest(arg) {
+    const xhr = new XMLHttpRequest();
+    const url = arg
+    xhr.open('GET', url)
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log(xhr.response);
+        }
+      }
     }
-
+    xhr.send()
   }
 
-  changeDate() {
-    var date = new Date()
-    this.setState({
-      date: date.toLocaleDateString()
-    })
-  }
+
 
 
   render() {
     return (
       <div className="App">
-        <Header date={this.state.date} />
-        <Button />
+        <Header />
+        <Button makeRequest={this.makeRequest} />
         <Austinmap />
         <Footer />
       </div>

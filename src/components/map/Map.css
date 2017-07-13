@@ -1,8 +1,5 @@
-#mapid {
-  width: 800px;
-  height: 400px;
-}
+
 .leaflet-container {
-    height: 400px;
+    height: 800px;
     width: 100%;
 }

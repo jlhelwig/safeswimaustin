@@ -7,17 +7,22 @@ import './Map.css';
 class Austinmap extends React.Component {
   constructor() {
     super();
-    this.state = {
+
+  }
+    
+
+    state = {
       lat: 51.505,
       lng: -0.09,
       zoom: 13,
     }
-  }
+
 
   render() {
-    const position = [this.state.lat, this.state.lng]
+    const position = [30.2671500, -97.7430600]
+    const zoom = 13
     return (
-      <Map center={position} zoom={this.state.zoom}>
+      <Map center={position} zoom={zoom}>
         <TileLayer
           attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
