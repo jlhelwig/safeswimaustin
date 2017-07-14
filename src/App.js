@@ -11,9 +11,15 @@ import Austinmap from './components/map/Austinmap';
 class App extends Component {
   constructor(){
     super();
-this.makeRequest = this.makeRequest.bind(this)
+
+    this.state = {
+      points: 99
+    }
+
+    this.makeRequest = this.makeRequest.bind(this)
 // this.points=this.props.points.bind(this)
   }
+
   makeRequest(arg) {
     const xhr = new XMLHttpRequest();
     const url = 'http://10.8.80.153:8000/displayparams'
@@ -22,15 +28,14 @@ this.makeRequest = this.makeRequest.bind(this)
     xhr.open('POST', url)
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
-        // console.log(xhr.response);
-
         if (xhr.status === 200) {
-        // xhr.response=this.points
-          console.log(xhr.response);
+          this.setState({points: xhr.response})
+          // console.log(this.state.points);
         }
       }
     }
     xhr.send(formdata)
+    // return this.points
   }
 
 
@@ -41,7 +46,7 @@ this.makeRequest = this.makeRequest.bind(this)
       <div className="App">
         <Header />
         <Button makeRequest={this.makeRequest} />
-        <Austinmap />
+        <Austinmap mapData={this.state.points} />
         <Footer />
       </div>
     );
