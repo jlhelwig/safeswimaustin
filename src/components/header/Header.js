@@ -21,7 +21,11 @@ class Header extends Component {
           <span className="Header__second-line">to Swim in the Greenbelt?</span>
         </h1>
 
-        <img className="Header__bgimage--right" src={eColi} alt="people swimming at the greenbelt"/>
+        <img className="Header__ecoli" src={eColi} alt="people swimming at the greenbelt"/>
+
+        <div className="Header__info-text">
+          <p>The City of Austin Watershed Department collects <a href="">water quality data</a> on local streams, creeks, and lakes. We've visualized this data onto a map with a focus on the dangerous e.coli bacteria which has a history of causing illness in swimmers.</p>
+        </div>
 
       </div>
     );

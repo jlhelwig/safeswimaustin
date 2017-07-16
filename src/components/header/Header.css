@@ -5,7 +5,7 @@
 
 .Header__banner {
   background-image: url("/greenbelt.jpg");
-  height: 400px;
+  height: 300px;
   background-size: cover;
   background-position-y: -295px;
   filter: blur(1px);
@@ -17,13 +17,31 @@
   color: white;
   text-shadow: 10px 10px 10px #000;
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .Header__second-line {
   font-size: 57px;
+}
+
+.Header__ecoli {
+  border-radius: 50%;
+  border: 4px solid #fff;
+  width: 250px;
+  height: 250px;
+  margin: -125px 0 0 50px;
+  z-index: 1;
+  position: relative;
+  float: left;
+}
+
+.Header__info-text {
+  background: #fff;
+  font-size: 20px;
+  text-align: right;
+  padding: 20px 30px;
 }
 
 .header a {
