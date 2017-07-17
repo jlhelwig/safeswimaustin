@@ -24,7 +24,7 @@ class Header extends Component {
         <img className="Header__ecoli" src={eColi} alt="people swimming at the greenbelt"/>
 
         <div className="Header__info-text">
-          <p>The City of Austin Watershed Department collects <a href="">water quality data</a> on local streams, creeks, and lakes. We've visualized this data onto a map with a focus on the dangerous e.coli bacteria which has a history of causing illness in swimmers.</p>
+          <p>The City of Austin Watershed Department collects <a href="https://data.austintexas.gov/Environmental/Water-Quality-Sampling-Data/5tye-7ray">water quality data</a> on local streams, creeks, and lakes. We've visualized this data onto a map with a focus on the dangerous e.coli bacteria which has a history of causing illness in swimmers.</p>
         </div>
 
       </div>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { Map, TileLayer, Marker, Popup, PropTypes as MapPropTypes} from 'react-leaflet';
-import L from 'leaflet';
+// import L from 'leaflet';
 import './Map.css';
+
 
 
 const MyPopupMarker = ({ children, position }) => (
@@ -56,11 +57,11 @@ class Austinmap extends React.Component {
 
 
     const home = [30.2671500, -97.7430600]
-    const zoom = 13
+    const zoom = 11
 
 
     return (
-      <Map center={home} zoom={zoom}>
+      <Map className="damnMap" zoomControl={false} dragging = {false} scrollWheelZoom= {false} center={home} zoom={zoom} >
         <TileLayer
           attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"

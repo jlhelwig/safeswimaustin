@@ -1,0 +1,17 @@
+.button-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: -12px;
+  width: 18%;
+  align-self: flex-end;
+  left: 870px;
+
+}
+
+.Button{
+  background-color: #ffb84d;
+  padding: 13px 10px;
+  font-size: 20px;
+  border-radius: 50vh;
+}

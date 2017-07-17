@@ -1,12 +1,17 @@
 .Footer {
-  text-align: center;
+  /*text-align: center;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1rem;*/
   background-color: #efefef;
-  text-align: center;
+  height: 80px;
 
+  width: 100%;
+  z-index: 0;
+  top: 1000px;
+  border: 1px solid black;
 }
 /*.footer{
 

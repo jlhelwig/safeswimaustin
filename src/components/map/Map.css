@@ -1,5 +1,13 @@
 
 .leaflet-container {
-    height: 600px;
-    width: 100%;
+    /*position: relative*/
+    height: 880px;
+    width: 81%;
+    leafleat-top: 300;
+    z-index: 0;
+    border: 1px solid black;
+}
+.damnMap{
+  position: relative;
+  bottom: 880px;
 }
