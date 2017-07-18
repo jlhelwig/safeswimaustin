@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import { Map, TileLayer, Marker, Popup, PropTypes as MapPropTypes} from 'react-leaflet';
+import { Map, TileLayer, Marker, Circle, CircleMarker, Popup, PropTypes as MapPropTypes} from 'react-leaflet';
 // import L from 'leaflet';
 import './Map.css';
-
+// import MarkerLayer from 'react-leaflet-marker-layer';
 
 
 const MyPopupMarker = ({ children, position }) => (
-  <Marker position={position}>
+  <Marker position={position} >
     <Popup>
       <span>{children}</span>
     </Popup>
@@ -34,7 +34,7 @@ class Austinmap extends React.Component {
   constructor() {
     super();
 
-    this.state = {markers:[ { key: 'marker1', position: [30.267122, -97.7430600], children: 'My first popup' }]}
+    this.state = {markers:[ { key: 'marker1', position: [30.267122, -97.7430600], children: 'Austin!' }]}
   }
 
 
@@ -47,26 +47,33 @@ class Austinmap extends React.Component {
     var myArray = [1,2,3,4];
 
 
-
   if (points.key) {
   this.state.markers = points.key.map(function(eobj){
-   return {key:`marker${eobj.sample_ref_no}`, position: [parseFloat(eobj.lat_dd_wgs84) , parseFloat(eobj.lon_dd_wgs84)], children:`e. coli level is: ${eobj.result}` }
-    });
+   return {key:`marker${eobj.sample_ref_no}`, position: [parseFloat(eobj.lat_dd_wgs84) , parseFloat(eobj.lon_dd_wgs84)], children:`e. coli level is: ${eobj.result}cfu per 100ml -- anything over 100 cfu/100ml is not considered safe!` }
+    })
     console.log(this.state.markers);
+    // console.log(this.state.markers.key)
   }
 
 
     const home = [30.2671500, -97.7430600]
-    const zoom = 11
+    const zoom = 12
 
 
     return (
-      <Map className="damnMap" zoomControl={false} dragging = {false} scrollWheelZoom= {false} center={home} zoom={zoom} >
+
+      <Map className="damnMap" zoomControl={true} dragging = {false} scrollWheelZoom= {false} center={home} zoom={zoom} >
         <TileLayer
           attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
         />
-         <MyMarkersList markers={this.state.markers} />
+         <MyMarkersList markers={this.state.markers}/>
+         {/* <CircleMarker center={home} color="red" radius={11}>
+          <Popup>
+            <span>Popup in CircleMarker</span>
+          </Popup>
+        </CircleMarker> */}
+
       </Map>
     )
   }
