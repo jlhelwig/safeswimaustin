@@ -22,7 +22,7 @@ class App extends Component {
 
   makeRequest(arg) {
     const xhr = new XMLHttpRequest();
-    const url = 'http://10.8.80.153:8000/displayparams'
+    const url = 'http://water-qual-env.us-west-2.elasticbeanstalk.com/displayparams'
     //
     let formdata = new FormData()
     formdata.append('watershed', arg)
